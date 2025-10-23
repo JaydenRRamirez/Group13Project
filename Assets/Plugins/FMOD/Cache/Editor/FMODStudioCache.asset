@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: FMOD Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638967836342538051
+  lastModified: 638967929498980670
   FileSizes:
   - Name: Desktop
-    Value: 816
+    Value: 864
   Exists: 1
 --- !u!114 &-3728558504488835158
 MonoBehaviour:
@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: FMOD Project/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638967836342539426
+  lastModified: 638967929499200704
   FileSizes:
   - Name: Desktop
-    Value: 506
+    Value: 10272
   Exists: 1
 --- !u!114 &-3540842737557645779
 MonoBehaviour:
@@ -55,7 +55,7 @@ MonoBehaviour:
   Path: FMOD Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638967836342537330
+  lastModified: 638967929498970672
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -77,15 +77,45 @@ MonoBehaviour:
   - {fileID: -3540842737557645779}
   - {fileID: 9194148121763416898}
   - {fileID: -3728558504488835158}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: 6903352996875873701}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3540842737557645779}
   StringsBanks:
   - {fileID: -8465571091466006597}
   cacheVersion: 131849
-  cacheTime: 638967836342539426
-  SerializableEventsDict: []
+  cacheTime: 638967929499200704
+  SerializableEventsDict:
+  - key: event:/Absorption
+    index: 0
+--- !u!114 &6903352996875873701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Absorption
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Absorption
+  Guid:
+    Data1: 730042318
+    Data2: 1338353421
+    Data3: 904144316
+    Data4: 1163353443
+  Banks:
+  - {fileID: -3728558504488835158}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1120
 --- !u!114 &9194148121763416898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +131,7 @@ MonoBehaviour:
   Path: FMOD Project/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638967836342538733
+  lastModified: 638967797071859733
   FileSizes:
   - Name: Desktop
     Value: 506

@@ -57,8 +57,10 @@ public class GameManager : MonoBehaviour
         {
             // If the object has an Interactable component, tell it to react
             Interactable interactable = currentTarget.GetComponent<Interactable>();
+
             if (interactable != null)
             {
+                Vector3 playerPos = new Vector3(playerCamera.transform.position.x, playerCamera.transform.position.y, playerCamera.transform.position.z);
                 interactable.OnInteract();
             }
         }

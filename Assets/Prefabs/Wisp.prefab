@@ -127,6 +127,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   visualModel: {fileID: 6482584544831053348}
   shrinkSpeed: 5
+  audioRef:
+    Guid:
+      Data1: 730042318
+      Data2: 1338353421
+      Data3: 904144316
+      Data4: 1163353443
+    Path: event:/Absorption
 --- !u!1 &8540364187187956733
 GameObject:
   m_ObjectHideFlags: 0
