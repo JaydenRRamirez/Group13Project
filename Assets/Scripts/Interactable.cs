@@ -10,6 +10,7 @@ public class Interactable : MonoBehaviour
 
     public void OnInteract()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.absorption, visualModel.transform.position);
         if (!isShrinking)
         {
             StartCoroutine(ShrinkAndDeactivate());
