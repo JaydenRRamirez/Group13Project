@@ -3,14 +3,13 @@ using System.Collections;
 
 public class Interactable : MonoBehaviour
 {
-    public Transform visualModel; // The visible sphere mesh
     public float shrinkSpeed = 2f; // Higher = faster
 
     private bool isShrinking = false;
 
     public void OnInteract()
     {
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.absorption, visualModel.transform.position);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.absorption, transform.position);
         if (!isShrinking)
         {
             StartCoroutine(ShrinkAndDeactivate());
@@ -20,19 +19,19 @@ public class Interactable : MonoBehaviour
     IEnumerator ShrinkAndDeactivate()
     {
         isShrinking = true;
-        Vector3 originalScale = visualModel.localScale;
+        Vector3 originalScale = transform.localScale;
         Vector3 targetScale = Vector3.zero;
         float t = 0f;
 
         while (t < 1f)
         {
             t += Time.deltaTime * shrinkSpeed;
-            visualModel.localScale = Vector3.Lerp(originalScale, targetScale, t);
+            transform.localScale = Vector3.Lerp(originalScale, targetScale, t);
             yield return null;
         }
 
         // Ensure final scale is exactly zero
-        visualModel.localScale = Vector3.zero;
+        transform.localScale = Vector3.zero;
 
         // Deactivate the whole object (parent) so it no longer interacts
         gameObject.SetActive(false);
