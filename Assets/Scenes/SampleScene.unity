@@ -1336,9 +1336,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac61d5c9192af8a43a46757f06853764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  globalVolume: {fileID: 832575518}
   playerCamera: {fileID: 330585545}
   rayDistance: 5
   hoverUI: {fileID: 1900420715}
+  wispsAbsorbed: 0
 --- !u!4 &1400068762
 Transform:
   m_ObjectHideFlags: 0
