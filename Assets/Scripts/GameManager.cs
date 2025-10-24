@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -11,12 +13,30 @@ public class GameManager : MonoBehaviour
         get { return _instance; }
     }
 
+    [SerializeField] private Volume globalVolume;
+    private Vignette vignette;
+
     public Camera playerCamera;
     public float rayDistance = 5f;
     public GameObject hoverUI;
 
+    public int wispsAbsorbed = 0;
+
     private GameObject currentTarget;
 
+    void Start()
+    {
+        // Try to find the vignette override
+        if (globalVolume != null && globalVolume.profile.TryGet(out vignette))
+        {
+            Debug.Log("Vignette found!");
+        }
+        else
+        {
+            Debug.LogWarning("No Vignette found on Volume Profile!");
+        }
+    }
+    
     void Update()
     {
         HandleHover();
@@ -55,14 +75,28 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && currentTarget != null)
         {
-            // If the object has an Interactable component, tell it to react
             Interactable interactable = currentTarget.GetComponent<Interactable>();
 
             if (interactable != null)
             {
-                Vector3 playerPos = new Vector3(playerCamera.transform.position.x, playerCamera.transform.position.y, playerCamera.transform.position.z);
+                Vector3 playerPos = playerCamera.transform.position;
                 interactable.OnInteract();
+                wispsAbsorbed++;
+
+                // Safety check
+                if (vignette != null)
+                {
+                    SetVignetteIntensity(vignette.intensity.value + 0.1f);
+                }
             }
+        }
+    }
+
+    public void SetVignetteIntensity(float intensity)
+    {
+        if (vignette != null)
+        {
+            vignette.intensity.value = Mathf.Clamp01(intensity);
         }
     }
 

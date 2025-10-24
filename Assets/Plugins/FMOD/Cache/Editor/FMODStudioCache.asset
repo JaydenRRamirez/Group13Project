@@ -55,7 +55,7 @@ MonoBehaviour:
   Path: FMOD Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638967652708901001
+  lastModified: 638967815384989329
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -131,7 +131,7 @@ MonoBehaviour:
   Path: FMOD Project/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638967652709097518
+  lastModified: 638967815384990042
   FileSizes:
   - Name: Desktop
     Value: 506
